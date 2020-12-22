@@ -1,0 +1,19 @@
+{
+  "params": {
+    "local_server": "True",
+    "local_uri": "mysql://root:@localhost/flask_db",
+    "prod_uri": "mysql://root:@localhost/flask_db",
+    "fb_uri": "https://www.facebook.com/techknow7770",
+    "tw_uri": "https://twitter.com/TechKnow7770",
+    "git_uri": "https://techknow7770.blogspot.com/",
+    "blog_name": "Tech Know",
+    "tag_line": "A Blog Theme by Tech Know",
+    "gmail_username": "techknow7770@gmail.com",
+    "gmail_password": "vjpyadav#7770#",
+    "no_of_post": 2 ,
+    "login_img": "login_img.svg",
+    "user_email": "sachin@gmail.com",
+    "user_password": "Sachin123",
+    "upload_file_path": "P:\\flask\\static\\img"
+  }
+}

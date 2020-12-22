@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block body %}
+
+
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename='img/home-bg.jpg') }}')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>{{params['blog_name']}}</h1>
+            <span class="subheading">{{params['tag_line']}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+
+        Welcome in dashboard, you succseefully login
+        <br><br>
+        <h2>Basic Action</h2>
+        <a href="/edit/0"><button class="btn btn-primary">Add</button></a>
+        <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+        <hr>
+        <form action="/uploader" method="post" enctype="multipart/form-data">
+          <input type="file" id="myFile" name="filename">
+          <input type="submit" class="btn btn-primary">
+        </form>
+        <hr>
+      <table id="customers">
+        <tr>
+          <th>id</th>
+          <th>Title</th>
+          <th>Date</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        {% for posts in post %}
+        <tr>
+          <td>{{ posts.id }}</td>
+          <td>{{ posts.title[0:55] }}</td>
+          <td>{{ posts.date }}</td>
+          <td><a href="/edit/{{ posts.id }}"><button class="btn btn-primary">Edit</button></a></td>
+          <td><a href="/delete/{{ posts.id }}"><button class="btn btn-danger">Delete</button></a></td>
+        </tr>
+        {% endfor %}
+      </table>
+
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+
+
